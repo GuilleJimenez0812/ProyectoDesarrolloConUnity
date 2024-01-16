@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BloodyChristmas.sln"
+    "dotnet.defaultSolution": "BloodyChristmas.sln",
+    "dotnet.preferCSharpExtension": true
 }

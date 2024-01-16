@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerNoteScript : MonoBehaviour
 {
     private NoteScript activeNote;
-    private GameObject interactMessage;
+    private SubsScript activeSub;
+    private GameObject interactMessage;  
+    private int num = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +25,39 @@ public class PlayerNoteScript : MonoBehaviour
                 activeNote.ToggleNote();
             }
         }
+        if (activeSub)
+        {
+            activeSub.ToggleSub(num);
+            activeSub = null;
+        }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Note")
-        {
-            other.gameObject.TryGetComponent(out activeNote);
-            interactMessage.SetActive(true);
+    private void OnTriggerEnter(Collider other) {     
+        switch (other.gameObject.tag){
+            case "Note":
+                other.gameObject.TryGetComponent(out activeNote);
+                interactMessage.SetActive(true);
+                break;
+            case "Sub1":
+                other.gameObject.TryGetComponent(out activeSub);
+                num = 1;               
+                break;
+            case "Sub2":
+                other.gameObject.TryGetComponent(out activeSub);
+                num = 2;               
+                break;
+            case "Sub3":
+                other.gameObject.TryGetComponent(out activeSub);
+                num = 3;               
+                break;
+            case "Sub4":
+                other.gameObject.TryGetComponent(out activeSub);
+                num = 4;               
+                break;
+            case "Sub5":
+                other.gameObject.TryGetComponent(out activeSub);
+                num = 5;               
+                break;
         }
     }
 

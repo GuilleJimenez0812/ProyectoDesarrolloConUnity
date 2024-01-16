@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - Sub1
+  - Sub2
+  - Sub3
+  - Sub4
+  - Sub5
   layers:
   - Default
   - TransparentFX
