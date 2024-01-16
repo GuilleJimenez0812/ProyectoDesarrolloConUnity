@@ -13,6 +13,8 @@ public class Jumpscare_hall : MonoBehaviour
     private bool isMoving = false;
     private bool distortedCamera=false;
     public BadTVEffect tvEffect;
+    public Animator endingDoor;
+    public GameObject[] blood;
 
   private void Start()
     {
@@ -34,8 +36,12 @@ public class Jumpscare_hall : MonoBehaviour
             hasTriggered = true;
             isMoving = true;
             distortedCamera=true;
+            endingDoor.enabled=true;
             StartCoroutine(WaitAndPlayCursedAudio());
-
+            foreach (GameObject bl in blood)
+            {
+               bl.SetActive(true);
+            }
         }
     }
 

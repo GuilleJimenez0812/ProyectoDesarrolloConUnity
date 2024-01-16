@@ -8,7 +8,7 @@ public class activateEnding : MonoBehaviour
     public GameObject trigger1;
     public GameObject trigger2;
     private bool hasTriggered = false;
-
+    public AudioSource[] audios;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,10 @@ public class activateEnding : MonoBehaviour
           trigger2.SetActive(true); 
           trigger1.SetActive(true); 
           hasTriggered=true;
+            foreach (AudioSource audio in audios)
+            {
+               audio.Stop();
+            }
          }
     }
 }
