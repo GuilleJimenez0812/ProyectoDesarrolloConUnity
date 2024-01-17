@@ -57,7 +57,7 @@ public class SubsScript : MonoBehaviour
         interactCube4.SetActive(false);
     }
     IEnumerator TheSequence6(){
-        textBox.GetComponent<Text>().text = "Todo esto esta mu mal, tengo mucho miedo";
+        textBox.GetComponent<Text>().text = "Todo esto esta muy mal, tengo mucho miedo";
         yield return new WaitForSeconds(3);
         textBox.GetComponent<Text>().text = "Voy a buscar a mis padres arriba";
         yield return new WaitForSeconds(4);
