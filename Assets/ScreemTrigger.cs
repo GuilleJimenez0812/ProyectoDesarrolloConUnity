@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ScreemTrigger : MonoBehaviour
 {
     public AudioSource scream;
+    public AudioSource doorShut;
     private bool hasTriggered = false;
     public GameObject hallTrigger;
     public GameObject subtitles;
@@ -30,7 +31,7 @@ public class ScreemTrigger : MonoBehaviour
         if (!hasTriggered && other.CompareTag("Player"))
         {
             hasTriggered = true;
-            scream.Play();
+             Invoke("PlayScream", 4f);
             hallTrigger.SetActive(true);
             StartCoroutine(dogdialog());
            foreach (GameObject light in lights)
@@ -40,9 +41,16 @@ public class ScreemTrigger : MonoBehaviour
         }
     }
 
+
+      private void PlayScream()
+    {
+        scream.Play();
+    }
+
       IEnumerator dogdialog(){
         yield return new WaitForSeconds(1);
         bathroomDoor.Play("Closing");
+        doorShut.Play();
         yield return new WaitForSeconds(2);
         bathroomDoor.enabled=false;
         subtitles.GetComponent<Text>().text = "Daisy.......";
