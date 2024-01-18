@@ -12,6 +12,7 @@ public class ScreemTrigger : MonoBehaviour
     public GameObject hallTrigger;
     public GameObject subtitles;
     public Animator bathroomDoor;
+    public AudioSource doorOpen;
 
     public GameObject[] lights;
     // Start is called before the first frame update
@@ -58,7 +59,9 @@ public class ScreemTrigger : MonoBehaviour
          subtitles.GetComponent<Text>().text = "Mamá..., debo volver arriba";
         yield return new WaitForSeconds(8);
         subtitles.GetComponent<Text>().text = "";
-         yield return new WaitForSeconds(3);
+         yield return new WaitForSeconds(5);
+         doorOpen.Play();
+        yield return new WaitForSeconds(2);
          bathroomDoor.enabled=true;
         bathroomDoor.Play("Opening");}
 
