@@ -10,6 +10,7 @@ public class ScreemTrigger : MonoBehaviour
     private bool hasTriggered = false;
     public GameObject hallTrigger;
     public GameObject subtitles;
+    public Animator bathroomDoor;
 
     public GameObject[] lights;
     // Start is called before the first frame update
@@ -32,7 +33,6 @@ public class ScreemTrigger : MonoBehaviour
             scream.Play();
             hallTrigger.SetActive(true);
             StartCoroutine(dogdialog());
-
            foreach (GameObject light in lights)
             {
                light.SetActive(false);
@@ -42,10 +42,16 @@ public class ScreemTrigger : MonoBehaviour
 
       IEnumerator dogdialog(){
         yield return new WaitForSeconds(1);
+        bathroomDoor.Play("Closing");
+        yield return new WaitForSeconds(2);
+        bathroomDoor.enabled=false;
         subtitles.GetComponent<Text>().text = "Daisy.......";
         yield return new WaitForSeconds(6);
-         subtitles.GetComponent<Text>().text = "......Mamá, debo volver arriba?";
+         subtitles.GetComponent<Text>().text = "Mamá..., debo volver arriba";
         yield return new WaitForSeconds(8);
-        subtitles.GetComponent<Text>().text = "";}
-    
+        subtitles.GetComponent<Text>().text = "";
+         yield return new WaitForSeconds(3);
+         bathroomDoor.enabled=true;
+        bathroomDoor.Play("Opening");}
+
 }

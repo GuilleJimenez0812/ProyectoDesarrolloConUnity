@@ -2198,6 +2198,7 @@ MonoBehaviour:
   scream: {fileID: 1969123750}
   hallTrigger: {fileID: 1014754590}
   subtitles: {fileID: 427211976}
+  bathroomDoor: {fileID: 191467346}
   lights:
   - {fileID: 560624032}
   - {fileID: 1830262143}
