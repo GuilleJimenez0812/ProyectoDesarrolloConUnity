@@ -7,6 +7,8 @@ public class activateHallFootsteps : MonoBehaviour
     public AudioSource hallfootsteps;
     private bool hasTriggered = false;
     public GameObject subtitles;
+    public Animator kitchenDoor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class activateHallFootsteps : MonoBehaviour
              Invoke("PlayFootsteps", 3f);
             hasTriggered=true;
             StartCoroutine(hallFootseps());
+            kitchenDoor.enabled=true;
          }
     }
 
@@ -35,11 +38,11 @@ public class activateHallFootsteps : MonoBehaviour
 
      IEnumerator hallFootseps(){
         yield return new WaitForSeconds(1);
-        subtitles.GetComponent<Text>().text = "¿Que es ese Oso?";
+        subtitles.GetComponent<Text>().text = "¿Que es este Oso?";
         yield return new WaitForSeconds(2);
-         subtitles.GetComponent<Text>().text = "";
-        yield return new WaitForSeconds(1);
-         subtitles.GetComponent<Text>().text = "Esta muy oscuro aqui";
+         subtitles.GetComponent<Text>().text = "......";
+        yield return new WaitForSeconds(3);
+         subtitles.GetComponent<Text>().text = "Debo encontrar a daisy ";
         yield return new WaitForSeconds(2);
          subtitles.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(1);

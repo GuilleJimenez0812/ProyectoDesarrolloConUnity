@@ -37,6 +37,7 @@ public class Jumpscare_hall : MonoBehaviour
             isMoving = true;
             distortedCamera=true;
             endingDoor.enabled=true;
+            endingDoor.Play("Opening");
             StartCoroutine(WaitAndPlayCursedAudio());
             foreach (GameObject bl in blood)
             {
