@@ -43,7 +43,7 @@ public class activateHallFootsteps : MonoBehaviour
          subtitles.GetComponent<Text>().text = "......";
         yield return new WaitForSeconds(3);
          subtitles.GetComponent<Text>().text = "¿Quién anda en el pasillo?, debo encontrar a daisy y ponerla a salvo, tal vez esta en la cocina ";
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
          subtitles.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(1);
     }

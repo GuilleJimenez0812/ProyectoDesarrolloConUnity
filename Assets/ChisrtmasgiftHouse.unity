@@ -47140,6 +47140,7 @@ MonoBehaviour:
   cursedAudio: {fileID: 237979142}
   tvEffect: {fileID: 6911549238812935061}
   endingDoor: {fileID: 178661799}
+  subtitles: {fileID: 427211976}
   blood:
   - {fileID: 26407857}
   - {fileID: 112401971}
@@ -57675,8 +57676,8 @@ Transform:
   m_GameObject: {fileID: 1386806930}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.06, y: 1.54, z: 35.97}
-  m_LocalScale: {x: 8.646615, y: 3.4997, z: 1}
+  m_LocalPosition: {x: -35.13, y: 1.54, z: 35.97}
+  m_LocalScale: {x: 7.399224, y: 3.4997, z: 5.600218}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

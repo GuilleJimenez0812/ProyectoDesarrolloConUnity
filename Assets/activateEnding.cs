@@ -45,7 +45,7 @@ public class activateEnding : MonoBehaviour
       
        
         yield return new WaitForSeconds(2);
-        subtitles.GetComponent<Text>().text = "ma..., lo siento";
+        subtitles.GetComponent<Text>().text = "Ma..., lo siento";
         yield return new WaitForSeconds(6);
         subtitles.GetComponent<Text>().text = "";}
 }

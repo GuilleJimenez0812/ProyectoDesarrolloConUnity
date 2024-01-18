@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 public class Jumpscare_hall : MonoBehaviour
@@ -14,6 +16,8 @@ public class Jumpscare_hall : MonoBehaviour
     private bool distortedCamera=false;
     public BadTVEffect tvEffect;
     public Animator endingDoor;
+    public GameObject subtitles;
+
     public GameObject[] blood;
 
   private void Start()
@@ -38,6 +42,7 @@ public class Jumpscare_hall : MonoBehaviour
             distortedCamera=true;
             endingDoor.enabled=true;
             endingDoor.Play("Opening");
+
             StartCoroutine(WaitAndPlayCursedAudio());
             foreach (GameObject bl in blood)
             {
@@ -48,7 +53,11 @@ public class Jumpscare_hall : MonoBehaviour
 
         private IEnumerator WaitAndPlayCursedAudio()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2);
+        subtitles.GetComponent<Text>().text = "QUE FUE ESO !!";
+        yield return new WaitForSeconds(2);
+         subtitles.GetComponent<Text>().text = "";
+        yield return new WaitForSeconds(1f);
 
         if (cursedAudio != null)
         {
@@ -70,4 +79,5 @@ public class Jumpscare_hall : MonoBehaviour
         tvEffect.fineDistort = Mathf.RoundToInt(Mathf.Lerp(2.2f, 10f, 10f));
         }
     }
+
 }
