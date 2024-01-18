@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class activateEnding : MonoBehaviour
 {
     public GameObject monster;
     public GameObject trigger1;
     public GameObject trigger2;
+    public GameObject subtitles;
     private bool hasTriggered = false;
     public AudioSource[] audios;
 
@@ -29,6 +32,7 @@ public class activateEnding : MonoBehaviour
         { monster.SetActive(true);                     
           trigger2.SetActive(true); 
           trigger1.SetActive(true); 
+          StartCoroutine(finalDialog());
           hasTriggered=true;
             foreach (AudioSource audio in audios)
             {
@@ -36,4 +40,13 @@ public class activateEnding : MonoBehaviour
             }
          }
     }
+
+        IEnumerator finalDialog(){
+      
+       
+        yield return new WaitForSeconds(2);
+        subtitles.GetComponent<Text>().text = "ma..., lo siento";
+        yield return new WaitForSeconds(6);
+        subtitles.GetComponent<Text>().text = "";}
 }
+    

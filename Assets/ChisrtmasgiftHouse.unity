@@ -46732,6 +46732,7 @@ MonoBehaviour:
   monster: {fileID: 842122111}
   trigger1: {fileID: 1663261849}
   trigger2: {fileID: 1780245909}
+  subtitles: {fileID: 427211976}
   audios:
   - {fileID: 566510270}
   - {fileID: 237979142}
